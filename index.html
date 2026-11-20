@@ -3,76 +3,362 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PhotoStereo XR — your photos in 3D on Meta Quest</title>
-<meta name="description" content="PhotoStereo XR turns your own photos into stereoscopic 3D on Meta Quest with on-device AI. Volume and Cinema 3D modes. No uploads, no accounts, no credits.">
-<link rel="icon" href="data:image/png;base64,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">
+<title>PhotoStereo XR – Your photos in 3D on Meta Quest</title>
+<meta name="description" content="PhotoStereo XR turns your photos and drawings into 3D right on Meta Quest. On-device, no cloud, no account, no subscription.">
+<meta property="og:title" content="PhotoStereo XR – Your photos in 3D on Meta Quest">
+<meta property="og:description" content="Turn any photo or drawing into 3D right on your Meta Quest. On-device, no cloud, no subscription.">
+<meta property="og:image" content="https://unv29.github.io/PhotoStereoXR/assets/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
 <style>
-  :root { --bg:#0b1018; --card:#121a26; --text:#e8eef6; --soft:#a9b6c7; --accent:#2f8cff; --line:#223044; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif; }
-  main { max-width:820px; margin:0 auto; padding:48px 22px 64px; }
-  header { display:flex; align-items:center; gap:16px; }
-  .logo { width:64px; height:64px; border-radius:14px; flex:none; }
-  h1 { font-size:34px; margin:0; line-height:1.15; }
-  h1 span { color:var(--accent); }
-  .tag { color:var(--soft); margin:4px 0 0; }
-  .lead { font-size:19px; margin:30px 0 26px; }
-  section { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 26px; margin-bottom:18px; }
-  h2 { font-size:18px; margin:0 0 8px; }
-  ul { padding-left:22px; margin:6px 0; }
-  li { margin:4px 0; }
-  a { color:var(--accent); }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  @media (max-width:640px) { .grid { grid-template-columns:1fr; } }
-  footer { color:var(--soft); font-size:13px; text-align:center; margin-top:30px; }
+@font-face{font-family:"Caveat";src:url("assets/caveat-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{
+  --bg:#0b0e16;--panel:#141926;--panel2:#1b2132;--line:#262d42;
+  --text:#eef0f6;--muted:#a3abc2;--cream:#f7e7b4;
+  --red:#e5484d;--blue:#3e8bff;--green:#30a46c;
+  --radius:18px;--max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.hand{font-family:"Caveat",cursive;font-weight:700;color:var(--cream);letter-spacing:.2px}
+
+/* top bar */
+.top{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+.top.solid{background:rgba(11,14,22,.86);backdrop-filter:blur(10px);border-color:var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.top .brand img{height:26px;width:auto}
+.top nav{display:flex;gap:22px;align-items:center;font-size:15px}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);padding:5px 11px;font:600 13px system-ui;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--panel2);color:var(--text)}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;padding:110px 0 70px}
+.hero::before{content:"";position:absolute;inset:-40px;background:url("assets/hero-pets.webp") center/cover;filter:blur(34px) brightness(.42) saturate(1.1);transform:scale(1.05)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,22,0) 55%,var(--bg) 100%)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero .logo{width:min(520px,100%);height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}
+.hero .slogan{font-size:clamp(46px,6.4vw,78px);line-height:1;margin:18px 0 14px;text-shadow:0 6px 18px rgba(0,0,0,.5)}
+.hero p.lead{font-size:19px;color:#d9ddea;max-width:520px;margin:0 0 26px}
+.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(20,25,38,.75);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--muted);margin-bottom:22px}
+.badge b{color:var(--text)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:650;border-radius:12px;padding:13px 20px;font-size:16px;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:#5a9cff}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:var(--text)}
+.hero .shot{border-radius:var(--radius);box-shadow:0 30px 70px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.1);transform:perspective(1200px) rotateY(-8deg)}
+
+section{padding:84px 0}
+.kicker{font-size:30px;margin:0 0 4px}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin:0 0 14px;letter-spacing:-.4px}
+.sub{color:var(--muted);max-width:640px;margin:0 0 36px;font-size:18px}
+
+/* trailer */
+.video{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:#000;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* modes */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mode{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.mode img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.mode .body{padding:22px 24px 26px}
+.mode h3{margin:0 0 6px;font-size:22px;display:flex;align-items:center;gap:10px}
+.pill{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;color:#fff}
+.mode p{margin:0;color:var(--muted)}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.feat .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px}
+.feat .ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{margin:0 0 6px;font-size:18px}
+.feat p{margin:0;color:var(--muted);font-size:15px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.gallery button{padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in;background:#000}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s}
+.gallery button:hover img{transform:scale(1.03)}
+.gallery .g1{grid-column:span 3}.gallery .g2{grid-column:span 3}
+.gallery .g3,.gallery .g4,.gallery .g5{grid-column:span 2}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:24px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-height:90vh;border-radius:12px}
+
+/* tips */
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+.card h3{margin:0 0 10px;font-size:19px}
+.card ul{margin:0;padding-left:20px;color:var(--muted)}
+.card li{margin:6px 0}
+code{background:var(--panel2);padding:2px 7px;border-radius:6px;font-size:14px;color:var(--text)}
+
+/* final cta */
+.final{text-align:center;background:radial-gradient(800px 300px at 50% 0%,rgba(62,139,255,.18),transparent 70%)}
+.final .slogan{font-size:clamp(40px,5vw,60px);margin:0 0 10px}
+.final .cta{justify-content:center;margin-top:26px}
+
+footer{border-top:1px solid var(--line);padding:36px 0 46px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.social{display:flex;gap:10px}
+.social a{width:40px;height:40px;border-radius:12px;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center}
+.social a:hover{background:var(--panel2)}
+.social svg{width:19px;height:19px;fill:var(--text)}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--text)}
+
+@media (max-width:900px){
+  .top nav a.hide-m{display:none}
+  .hero{min-height:auto}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero .shot{transform:none}
+  .modes,.tips{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery .g1,.gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5{grid-column:span 1}
+  .gallery .g1{grid-column:span 2}
+}
+@media (max-width:560px){.features{grid-template-columns:1fr}section{padding:64px 0}}
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <img class="logo" src="data:image/png;base64,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" alt="PhotoStereo XR icon">
-    <div>
-      <h1>PhotoStereo <span>XR</span></h1>
-      <p class="tag">Your photos in 3D on Meta Quest</p>
-    </div>
-  </header>
 
-  <p class="lead">Look <strong>around</strong> your photos, not just at them. PhotoStereo XR uses on-device AI to turn the photos on your Meta Quest into stereoscopic 3D in seconds.</p>
-
-  <div class="grid">
-    <section>
-      <h2>Volume mode</h2>
-      <p>Your photo gains real relief. Lean in or move your head and the image shifts like a real object in front of you.</p>
-    </section>
-    <section>
-      <h2>Cinema 3D mode</h2>
-      <p>A flat screen with stereoscopic depth. Comfortable, no need to move.</p>
-    </section>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="PhotoStereo XR"><img src="assets/logo.png" alt="PhotoStereo XR"></a>
+    <nav>
+      <a class="hide-m" href="#trailer" data-i18n="nav_trailer">Trailer</a>
+      <a class="hide-m" href="#modes" data-i18n="nav_modes">Modes</a>
+      <a class="hide-m" href="#support" data-i18n="nav_support">Support</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+      </div>
+    </nav>
   </div>
+</header>
 
-  <section>
-    <h2>Private and unlimited</h2>
-    <ul>
-      <li>Everything runs on the headset: no uploads, no accounts, works offline.</li>
-      <li>No credits or subscriptions: convert as many photos as you want.</li>
-      <li>Conversion queue, a "3D photos" album, and side-by-side 3D copies saved to the Meta Quest gallery.</li>
-      <li>Interface in English, Portuguese and Spanish.</li>
-    </ul>
-  </section>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <img class="logo" src="assets/logo.png" alt="PhotoStereo XR">
+      <div class="slogan hand" data-i18n="slogan">Your photos in 3D</div>
+      <p class="lead" data-i18n="lead">Turn any photo or drawing into 3D right on your Meta Quest. Everything runs on the headset: no cloud, no account, no subscription.</p>
+      <div class="badge"><span class="dot"></span><span data-i18n-html="badge">Launching <b>Nov 24, 2026</b> · US$ 4.99</span></div>
+      <div class="cta">
+        <a class="btn primary store" href="https://www.meta.com/experiences/photostereo-xr/1441940112333384/" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9.1C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 5.2 3 1.8-1.9 3.2-3 5.2-3 3.5 0 5.6 3.6 4.1 6.9C19 16.6 12 21 12 21z"/></svg>
+          <span data-i18n="cta_store">Add to wishlist on the Meta Horizon Store</span>
+        </a>
+        <a class="btn ghost" href="#trailer" data-i18n="cta_trailer">Watch the trailer</a>
+      </div>
+    </div>
+    <img class="shot" src="assets/shot-pets.webp" alt="A photo of a puppy and a kitten shown in 3D inside PhotoStereo XR" width="1600" height="900">
+  </div>
+</section>
 
-  <section id="support">
-    <h2>Support</h2>
-    <p>Questions, feedback or bug reports: <a href="mailto:photostereoxr.app@gmail.com">photostereoxr.app@gmail.com</a></p>
-    <p><strong>Tips for the best results:</strong> use sharp, high-resolution photos of people, faces and objects with a clear subject. To get photos onto your headset, copy them to the Pictures folder over USB, or use the photos and screenshots already on your Meta Quest.</p>
-    <p>Suporte em português e en español pelo mesmo e-mail.</p>
-  </section>
+<section id="trailer">
+  <div class="wrap">
+    <div class="kicker hand" data-i18n="k_trailer">See it in action</div>
+    <h2 data-i18n="h_trailer">One photo, two ways to see it in 3D</h2>
+    <p class="sub" data-i18n="s_trailer">Captured on a Meta Quest. Watch the switch from Cinema 3D to Volume and how the photo pops out as the head moves.</p>
+    <div class="video"><iframe id="yt" src="https://www.youtube-nocookie.com/embed/0vtPeNb-qhU?rel=0" title="PhotoStereo XR trailer"  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  </div>
+</section>
 
-  <section>
-    <h2>Privacy</h2>
-    <p>PhotoStereo XR collects no data, and your photos never leave the headset. <a href="privacy.html">Read the privacy policy</a>.</p>
-  </section>
+<section id="modes">
+  <div class="wrap">
+    <div class="kicker hand" data-i18n="k_modes">Two 3D modes</div>
+    <h2 data-i18n="h_modes">Switch with a single tap</h2>
+    <p class="sub" data-i18n="s_modes">Both modes use the same depth map made on your headset. Pick the one that suits each photo.</p>
+    <div class="modes">
+      <article class="mode">
+        <img src="assets/shot-pets.webp" alt=""  width="1600" height="900">
+        <div class="body">
+          <h3><span class="pill" style="background:var(--blue)">Cinema 3D</span></h3>
+          <p data-i18n="m_cinema">A big screen with deep stereoscopic depth, like a movie theater, with soft edges and ambient glow. No need to move your head.</p>
+        </div>
+      </article>
+      <article class="mode">
+        <img src="assets/shot-friends.webp" alt=""  width="1600" height="900">
+        <div class="body">
+          <h3><span class="pill" style="background:var(--green)">Volume</span></h3>
+          <p data-i18n="m_volume">The photo gains real relief. Faces, hair and objects pop out and shift as you lean in or move your head.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <footer>© 2026 PhotoStereo XR</footer>
-</main>
+<section>
+  <div class="wrap">
+    <div class="kicker hand" data-i18n="k_feat">Private and unlimited</div>
+    <h2 data-i18n="h_feat">Your photos never leave the headset</h2>
+    <p class="sub" data-i18n="s_feat">On-device AI turns photos, drawings and illustrations into 3D. Convert as many as you like.</p>
+    <div class="features">
+      <div class="feat"><div class="ic" style="background:var(--blue)"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3 data-i18n="f1h">On-device and offline</h3><p data-i18n="f1p">No uploads, no account, no internet needed. Processing happens on the Quest.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--green)"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg></div><h3 data-i18n="f2h">No credits or subscription</h3><p data-i18n="f2p">Pay once and convert as many photos as you want.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--red)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="15" width="7" height="6" rx="1.5"/><rect x="14" y="15" width="7" height="6" rx="1.5"/></svg></div><h3 data-i18n="f3h">Batch conversion</h3><p data-i18n="f3p">Select several photos and convert them all at once, with a “3D photos” album.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--blue)"><svg viewBox="0 0 24 24"><path d="M12 19c-4 0-7-3-7-7s3-7 7-7 7 3 7 7"/><path d="M15 15l3 3 3-3"/></svg></div><h3 data-i18n="f4h">Even drawings</h3><p data-i18n="f4p">Sketches, paintings and illustrations get depth too, not only photos.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--green)"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="9" height="12" rx="1.5"/><rect x="13" y="6" width="9" height="12" rx="1.5"/></svg></div><h3 data-i18n="f5h">Side-by-side copies</h3><p data-i18n="f5p">Save SBS 3D copies to your Quest gallery and open existing stereo pairs.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--red)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div><h3 data-i18n="f6h">3 languages</h3><p data-i18n="f6p">Interface in English, Portuguese and Spanish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker hand" data-i18n="k_gal">Inside the app</div>
+    <h2 data-i18n="h_gal">Screenshots</h2>
+    <p class="sub" data-i18n="s_gal">Captured on Meta Quest. Click to enlarge.</p>
+    <div class="gallery">
+      <button class="g1" type="button"><img src="assets/shot-pets.webp" alt="Pets photo in Cinema 3D" ></button>
+      <button class="g2" type="button"><img src="assets/shot-friends.webp" alt="Group of friends in Volume mode with the toolbar" ></button>
+      <button class="g3" type="button"><img src="assets/shot-sketch.webp" alt="Pencil drawing in 3D" ></button>
+      <button class="g4" type="button"><img src="assets/shot-gallery.webp" alt="Gallery with batch conversion" ></button>
+      <button class="g5" type="button"><img src="assets/shot-settings.webp" alt="Settings panel" ></button>
+    </div>
+  </div>
+</section>
+
+<section id="support">
+  <div class="wrap">
+    <div class="kicker hand" data-i18n="k_sup">Tips and support</div>
+    <h2 data-i18n="h_sup">Get the best 3D</h2>
+    <div class="tips">
+      <div class="card">
+        <h3 data-i18n="t1h">Best photos</h3>
+        <ul>
+          <li data-i18n="t1a">Sharp, high-resolution photos with a clear main subject.</li>
+          <li data-i18n="t1b">People, pets and objects in front of a deeper background look amazing in Volume.</li>
+          <li data-i18n="t1c">Very dark photos give less depth.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-i18n="t2h">Getting photos onto the Quest</h3>
+        <ul>
+          <li data-i18n-html="t2a">Connect the Quest via USB and copy photos to the <code>Pictures</code> folder.</li>
+          <li data-i18n="t2b">Or use photos and screenshots already on the headset.</li>
+          <li data-i18n-html="t2c">Questions, feedback or bugs: <a href="mailto:photostereoxr.app@gmail.com">photostereoxr.app@gmail.com</a> (English, Portuguese or Spanish).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="slogan hand" data-i18n="slogan">Your photos in 3D</div>
+    <p class="sub" style="margin:0 auto" data-i18n="final_p">PhotoStereo XR launches on the Meta Horizon Store on November 24, 2026.</p>
+    <div class="cta">
+      <a class="btn primary store" href="https://www.meta.com/experiences/photostereo-xr/1441940112333384/" target="_blank" rel="noopener" data-i18n="cta_store">Add to wishlist on the Meta Horizon Store</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 PhotoStereo XR</div>
+    <nav>
+      <a href="privacy.html" data-i18n="privacy">Privacy policy</a>
+      <a href="mailto:photostereoxr.app@gmail.com" data-i18n="contact">Contact</a>
+      <a href="https://sidequestvr.com/app/64048/photostereo-xr" target="_blank" rel="noopener">SideQuest</a>
+    </nav>
+    <div class="social">
+      <a href="https://www.youtube.com/@photostereoxr" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12c0 1.6.1 3.2.4 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8zM9.7 15.1V8.9L15.5 12l-5.8 3.1z"/></svg></a>
+      <a href="https://www.tiktok.com/@photostereoxr" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 3c.4 2.2 1.8 3.7 4 3.9v3.2a7.2 7.2 0 0 1-4-1.2v6.3a6 6 0 1 1-6-6c.3 0 .6 0 .9.1v3.3a2.8 2.8 0 1 0 1.9 2.6V3h3.2z"/></svg></a>
+      <a href="https://www.facebook.com/profile.php?id=61596814077247" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.7-4.5 4.6V11H7v4h2.5v8h4v-8h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true"><img alt=""></div>
+
+<script>
+// Trailer de cada idioma (troque o ID quando publicar a versão v2 no YouTube)
+const TRAILER = { en: "0vtPeNb-qhU", pt: "RqiFJBvaPDc" };
+
+const T = {
+  en: {},
+  pt: {
+    nav_trailer:"Trailer", nav_modes:"Modos", nav_support:"Suporte",
+    slogan:"Suas fotos em 3D",
+    lead:"Transforme qualquer foto ou desenho em 3D direto no seu Meta Quest. Tudo roda no próprio headset: sem nuvem, sem conta e sem assinatura.",
+    badge:"Lançamento <b>24/11/2026</b> · US$ 4,99",
+    cta_store:"Adicione à lista de desejos na Meta Horizon Store", cta_trailer:"Ver o trailer",
+    k_trailer:"Veja funcionando", h_trailer:"Uma foto, dois jeitos de ver em 3D",
+    s_trailer:"Capturado no Meta Quest. Veja a troca do Cinema 3D para o Volume e a foto saltando conforme a cabeça se move.",
+    k_modes:"Dois modos 3D", h_modes:"Troque com um toque",
+    s_modes:"Os dois modos usam o mesmo mapa de profundidade feito no seu headset. Escolha o que combina com cada foto.",
+    m_cinema:"Uma tela grande com profundidade estereoscópica, como numa sala de cinema, com bordas suaves e luz em volta. Não precisa mexer a cabeça.",
+    m_volume:"A foto ganha relevo de verdade. Rostos, cabelos e objetos saltam e se movem quando você se aproxima ou mexe a cabeça.",
+    k_feat:"Privado e ilimitado", h_feat:"Suas fotos nunca saem do headset",
+    s_feat:"A IA no próprio aparelho transforma fotos, desenhos e ilustrações em 3D. Converta quantas quiser.",
+    f1h:"No aparelho e offline", f1p:"Sem upload, sem conta, sem internet. Todo o processamento acontece no Quest.",
+    f2h:"Sem créditos nem assinatura", f2p:"Pague uma vez e converta quantas fotos quiser.",
+    f3h:"Conversão em lote", f3p:"Selecione várias fotos e converta todas de uma vez, com um álbum “Fotos 3D”.",
+    f4h:"Até desenhos", f4p:"Esboços, pinturas e ilustrações também ganham profundidade, não só fotos.",
+    f5h:"Cópias lado a lado", f5p:"Salve cópias 3D SBS na galeria do Quest e abra pares estéreo que você já tem.",
+    f6h:"3 idiomas", f6p:"Interface em português, inglês e espanhol.",
+    k_gal:"Por dentro do app", h_gal:"Capturas de tela", s_gal:"Capturadas no Meta Quest. Clique para ampliar.",
+    k_sup:"Dicas e suporte", h_sup:"Para o melhor 3D",
+    t1h:"Melhores fotos", t1a:"Fotos nítidas, em boa resolução e com um assunto principal claro.",
+    t1b:"Pessoas, pets e objetos na frente de um fundo mais distante ficam incríveis no Volume.",
+    t1c:"Fotos muito escuras geram menos profundidade.",
+    t2h:"Como levar fotos para o Quest",
+    t2a:"Conecte o Quest pelo USB e copie as fotos para a pasta <code>Pictures</code>.",
+    t2b:"Ou use as fotos e capturas que já estão no headset.",
+    t2c:"Dúvidas, sugestões ou bugs: <a href=\"mailto:photostereoxr.app@gmail.com\">photostereoxr.app@gmail.com</a> (português, inglês ou espanhol).",
+    final_p:"O PhotoStereo XR chega à Meta Horizon Store em 24 de novembro de 2026.",
+    privacy:"Política de privacidade", contact:"Contato"
+  }
+};
+// guarda o texto original em inglês
+document.querySelectorAll("[data-i18n]").forEach(e => T.en[e.dataset.i18n] = e.textContent);
+document.querySelectorAll("[data-i18n-html]").forEach(e => T.en[e.dataset.i18nHtml] = e.innerHTML);
+const EN_TITLE = document.title;
+
+function setLang(l){
+  const d = T[l] || T.en;
+  document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
+  document.querySelectorAll("[data-i18n]").forEach(e => { const v = d[e.dataset.i18n] ?? T.en[e.dataset.i18n]; if (v) e.textContent = v; });
+  document.querySelectorAll("[data-i18n-html]").forEach(e => { const v = d[e.dataset.i18nHtml] ?? T.en[e.dataset.i18nHtml]; if (v) e.innerHTML = v; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  document.title = l === "pt" ? "PhotoStereo XR – Suas fotos em 3D no Meta Quest" : EN_TITLE;
+  const yt = document.getElementById("yt"); const id = TRAILER[l] || TRAILER.en;
+  if (!yt.src.includes(id)) yt.src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0";
+  try { localStorage.setItem("psxr-lang", l); } catch (e) {}
+}
+let start = "en";
+try { start = localStorage.getItem("psxr-lang") || ""; } catch (e) {}
+if (!start) start = (navigator.language || "").toLowerCase().startsWith("pt") ? "pt" : "en";
+setLang(start);
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+// barra do topo
+const top_ = document.getElementById("top");
+const onScroll = () => top_.classList.toggle("solid", scrollY > 30);
+addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+// ampliar screenshots
+const lb = document.getElementById("lb"), lbImg = lb.querySelector("img");
+document.querySelectorAll(".gallery button").forEach(b => b.addEventListener("click", () => {
+  const i = b.querySelector("img"); lbImg.src = i.src; lbImg.alt = i.alt; lb.classList.add("open");
+}));
+lb.addEventListener("click", () => lb.classList.remove("open"));
+addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("open"); });
+</script>
 </body>
 </html>
