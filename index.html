@@ -102,7 +102,7 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin:0 0 14px;letter-spac
 .card h3{margin:0 0 10px;font-size:19px}
 .card ul{margin:0;padding-left:20px;color:var(--muted)}
 .card li{margin:6px 0}
-code{background:var(--panel2);padding:2px 7px;border-radius:6px;font-size:14px;color:var(--text)}
+code{background:var(--panel2);padding:1px 6px;white-space:nowrap;border-radius:6px;font-size:14px;color:var(--text)}
 
 /* final cta */
 .final{text-align:center;background:radial-gradient(800px 300px at 50% 0%,rgba(62,139,255,.18),transparent 70%)}
@@ -174,7 +174,7 @@ footer nav a:hover{color:var(--text)}
     <div class="kicker hand" data-i18n="k_trailer">See it in action</div>
     <h2 data-i18n="h_trailer">One photo, two ways to see it in 3D</h2>
     <p class="sub" data-i18n="s_trailer">Captured on a Meta Quest. Watch the switch from Cinema 3D to Volume and how the photo pops out as the head moves.</p>
-    <div class="video"><iframe id="yt" src="https://www.youtube-nocookie.com/embed/0vtPeNb-qhU?rel=0" title="PhotoStereo XR trailer"  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    <div class="video"><iframe id="yt" src="https://www.youtube-nocookie.com/embed/5-xCPrJvYgQ?rel=0" title="PhotoStereo XR trailer"  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
   </div>
 </section>
 
@@ -249,7 +249,7 @@ footer nav a:hover{color:var(--text)}
       <div class="card">
         <h3 data-i18n="t2h">Getting photos onto the Quest</h3>
         <ul>
-          <li data-i18n-html="t2a">Connect the Quest via USB and copy photos to the <code>Pictures</code> folder.</li>
+          <li data-i18n-html="t2a">Connect the Quest via USB and copy photos to the <code>Pictures</code>&nbsp;folder.</li>
           <li data-i18n="t2b">Or use photos and screenshots already on the headset.</li>
           <li data-i18n-html="t2c">Questions, feedback or bugs: <a href="mailto:photostereoxr.app@gmail.com">photostereoxr.app@gmail.com</a> (English, Portuguese or Spanish).</li>
         </ul>
@@ -288,7 +288,7 @@ footer nav a:hover{color:var(--text)}
 
 <script>
 // Trailer de cada idioma (troque o ID quando publicar a versão v2 no YouTube)
-const TRAILER = { en: "0vtPeNb-qhU", pt: "RqiFJBvaPDc" };
+const TRAILER = { en: "5-xCPrJvYgQ", pt: "y0GFaPsYWJ8" };
 
 const T = {
   en: {},
@@ -318,7 +318,7 @@ const T = {
     t1b:"Pessoas, pets e objetos na frente de um fundo mais distante ficam incríveis no Volume.",
     t1c:"Fotos muito escuras geram menos profundidade.",
     t2h:"Como levar fotos para o Quest",
-    t2a:"Conecte o Quest pelo USB e copie as fotos para a pasta <code>Pictures</code>.",
+    t2a:"Conecte o Quest pelo USB e copie as fotos para a pasta&nbsp;<code>Pictures</code>.",
     t2b:"Ou use as fotos e capturas que já estão no headset.",
     t2c:"Dúvidas, sugestões ou bugs: <a href=\"mailto:photostereoxr.app@gmail.com\">photostereoxr.app@gmail.com</a> (português, inglês ou espanhol).",
     final_p:"O PhotoStereo XR chega à Meta Horizon Store em 24 de novembro de 2026.",
